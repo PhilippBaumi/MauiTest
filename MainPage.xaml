@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTest.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <DatePicker x:Name="datePickerDate"
+                        Date="{Binding SelectedDate, Mode=TwoWay}"/>
+            <Button
+                x:Name="btnAdd"
+                Text="Hinzufügen" 
+                Clicked="AddToList"/>
+            <CollectionView 
+                x:Name="collectionViewDates"
+                ItemsSource="{Binding Dates}"
+                SelectedItem="{Binding SelectedText, Mode=TwoWay}"
+                SelectionMode="Single"
+                SelectionChanged="OnSelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}" 
+                            Padding="10" 
+                            FontSize="18" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

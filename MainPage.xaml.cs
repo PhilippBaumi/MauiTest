@@ -22,7 +22,7 @@ namespace MauiTest
             string date = viewModel.SelectedDate.Value.ToString("dd.MM.yyyy");
             if (viewModel.Dates.Contains(date))
             {
-                await ShowDialog("Datum vorhanden", "Datum bereits in der Liste");
+                await ShowDialog("Datum vorhanden", "Datum "+date+" bereits vorhanden! ");
                 return;
              }
             viewModel.Dates.Add(date);
@@ -40,7 +40,7 @@ namespace MauiTest
                 string? date = viewModel.SelectedText;
                 if (date != null)
                 {
-                    await ShowDialog("Gewähltes Datum", date);
+                    await ShowDialog("Gewähltes Datum", "Du hast "+date+" aus der Liste gewählt! ");
                 }
                 return;
             }

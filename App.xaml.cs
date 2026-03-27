@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace MauiTest
+﻿namespace MauiTest
 {
     public partial class App : Application
     {
